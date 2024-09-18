@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Main} from "./layout/main/Main";
+import {Main} from "./layout/Main/Main";
 import {clientList, IDgenerator} from "./state/state";
+import {Header} from "./layout/Header/Header";
 
 export type ClientNameType = {
     firstName: string
@@ -9,11 +10,11 @@ export type ClientNameType = {
     patronymic: string
 }
 export type ClientContactType = {
-    VK: string
-    Facebook: string
-    phone: string
-    mail: string
-    LinkedIn: string
+    VK?: string
+    Facebook?: string
+    phone?: string
+    mail?: string
+    LinkedIn?: string
 }
 export type ClientType = {
     id: number
@@ -45,8 +46,8 @@ function App() {
 
     return (
         <div className="App">
-            {/*<Header/>*/}
-            <Main clientList={clientListState}/>
+            <Header searchCallBack={(string) => alert(`Поиск имени ${string}`)}/>
+            <Main clientList={clientListState} clientRemover={clientRemover}/>
         </div>
     );
 }

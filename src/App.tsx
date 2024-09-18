@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Main} from "./layout/main/Main";
 import {clientList, IDgenerator} from "./state/state";
+import {ContactForm} from "./components/modal/contactsForm/ContactForm";
 
 export type ClientNameType = {
     firstName: string
@@ -9,11 +10,11 @@ export type ClientNameType = {
     patronymic: string
 }
 export type ClientContactType = {
-    VK: string
-    Facebook: string
-    phone: string
-    mail: string
-    LinkedIn: string
+    VK?: string
+    Facebook?: string
+    phone?: string
+    mail?: string
+    LinkedIn?: string
 }
 export type ClientType = {
     id: number
@@ -46,7 +47,9 @@ function App() {
     return (
         <div className="App">
             {/*<Header/>*/}
-            <Main clientList={clientListState}/>
+            {/*<Main clientList={clientListState}/>*/}
+
+            <ContactForm contacts={clientList[0].contacts}/>
         </div>
     );
 }

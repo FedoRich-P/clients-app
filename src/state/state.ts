@@ -14,11 +14,11 @@ export const clientList = [
         createDate: '2000.05.01',
         lastChange: 'string',
         contacts: {
-            VK: 'string',
-            Facebook: 'string',
-            phone: 'string',
-            mail: 'string',
-            LinkedIn: 'string',
+            // VK: 'string',
+            // Facebook: 'string',
+            phone: '02',
+            mail: '02@uo.ui',
+            LinkedIn: '02@uo.ui',
         }
     },
     {
